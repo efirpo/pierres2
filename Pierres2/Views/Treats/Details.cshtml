@@ -8,3 +8,10 @@
 {
   @Html.ActionLink($"{join.Flavor.Name}", "Details", "Flavors", new {id = join.Flavor.FlavorId})
 }
+
+@Html.ActionLink("Return to Treats index", "Index")
+@if (User.Identity.IsAuthenticated)
+{
+@Html.ActionLink("Edit this treat", "Edit", new {id = Model.TreatId})
+@Html.ActionLink("Add a flavor to this treat", "AddFlavor", new {id = Model.TreatId})
+}

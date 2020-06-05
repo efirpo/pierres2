@@ -60,25 +60,25 @@ namespace Pierres2.Controllers
     {
       _db.Entry(treat).State = EntityState.Modified;
       _db.SaveChanges();
-      return View();
+      return RedirectToAction("Index");
     }
 
-    public ActionResult AddTreat(int id)
+    public ActionResult AddFlavor(int id)
     {
-      var thisFlavor = _db.Flavors
-      .Include(flavor => flavor.Treats)
-      .ThenInclude(join => join.Treat)
-      .FirstOrDefault(flavor => flavor.FlavorId == id);
-      ViewBag.Flavor = thisFlavor;
-      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Type");
+      var thisTreat = _db.Treats
+      .Include(treat => treat.Flavors)
+      .ThenInclude(join => join.Flavor)
+      .FirstOrDefault(treat => treat.TreatId == id);
+      ViewBag.Treat = thisTreat;
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View();
     }
 
     [HttpPost]
-    public ActionResult AddTreat(int id, int TreatId)
+    public ActionResult AddFlavor(int id, int FlavorId)
     {
-      var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == TreatId);
-      _db.TreatFlavor.Add(new TreatFlavor() { FlavorId = id, TreatId = thisTreat.TreatId });
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == FlavorId);
+      _db.TreatFlavor.Add(new TreatFlavor() { FlavorId = thisFlavor.FlavorId, TreatId = id });
       _db.SaveChanges();
 
       return RedirectToAction("Details", new { id });
