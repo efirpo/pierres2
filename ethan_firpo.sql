@@ -1,0 +1,14 @@
+CREATE DATABASE `pierre` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+USING pierre;
+
+CREATE TABLE `Flavors` (
+  `FlavorId` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` longtext,
+  PRIMARY KEY (`FlavorId`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `Treats` (
+  `TreatId` int(11) NOT NULL AUTO_INCREMENT,
+  `Type` longtext,
+  PRIMARY KEY (`TreatId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
