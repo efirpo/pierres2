@@ -1,12 +1,13 @@
 <div id="header">
   <img src="~/img/title.png"><br>
-  | @Html.ActionLink("Treats Index", "Index", "Treats") | 
-  @Html.ActionLink("Flavors Index", "Index", "Flavors") | @if (User.Identity.IsAuthenticated)
+  <center>
+   @Html.ActionLink("Treats Index", "Index", "Treats") | 
+  @Html.ActionLink("Flavors Index", "Index", "Flavors")  @if (User.Identity.IsAuthenticated)
   {
     @using (Html.BeginForm("LogOff", "Account"))
     {
       <input type="submit" class="btn btn-default" value="Log out" />
     }
   }
-  }
+  </center>
 </div>

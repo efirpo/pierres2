@@ -4,14 +4,16 @@
 
 <h1>Flavors associated with this treat.</h1>
 
+<ul>
 @foreach (var join in Model.Flavors)
 {
-  @Html.ActionLink($"{join.Flavor.Name}", "Details", "Flavors", new {id = join.Flavor.FlavorId})
+  <li>@Html.ActionLink($"{join.Flavor.Name}", "Details", "Flavors", new {id = join.Flavor.FlavorId})</li>
 }
+</ul>
 
-@Html.ActionLink("Return to Treats index", "Index")
 @if (User.Identity.IsAuthenticated)
-{
-@Html.ActionLink("Edit this treat", "Edit", new {id = Model.TreatId})
+{<center>
+@Html.ActionLink("Edit this treat", "Edit", new {id = Model.TreatId}) <span>|</span> 
 @Html.ActionLink("Add a flavor to this treat", "AddFlavor", new {id = Model.TreatId})
+</center>
 }

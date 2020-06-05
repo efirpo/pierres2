@@ -2,15 +2,18 @@
   Layout = "_Layout";
 }
 
-<h1>Treats that use this flavor.</h1>
+<h1>Treats that use @Model.Name Flavor</h1>
 
+<ul>
 @foreach (var join in Model.Treats)
 {
-  @Html.ActionLink($"{join.Treat.Type}", "Details", "Treats", new {id = join.Treat.TreatId})
+  <li>@Html.ActionLink($"{join.Treat.Type}", "Details", "Treats", new {id = join.Treat.TreatId})</li>
 }
+<ul>
 <br>
 @if (User.Identity.IsAuthenticated)
-{
+{<center>
 @Html.ActionLink("Edit this flavor", "Edit", new {id = Model.FlavorId}) <span> | </span> 
 @Html.ActionLink("Add a treat to this flavor", "AddTreat", new {id = Model.FlavorId})
+</center>
 }

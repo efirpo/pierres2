@@ -2,8 +2,10 @@
   Layout = "_Layout";
 }
 @using Pierres2.Models;
-
+@if (!(User.Identity.IsAuthenticated))
+{
 @Html.ActionLink("Log in", "Login", "Account")<br>
+}
 
 <h2>Flavors</h2>
 @foreach (Flavor flavor in ViewBag.Flavors)

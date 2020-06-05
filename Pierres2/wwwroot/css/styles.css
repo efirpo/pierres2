@@ -10,13 +10,20 @@ a
 {
   color: #10BBA7
 }
+a:hover
+{
+  color: #20bb11
+}
+ul
+{
+  font-family: Courier;
+}
 #header
 {
   top:0px;
-  margin: 0 auto;
+  margin: auto;
   width:100%;
   color:#CCC;
   background:#000;
   padding:8px;
-  align-content: center
 }
