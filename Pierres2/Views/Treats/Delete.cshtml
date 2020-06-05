@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2>Delete: @Model.Type</h2>
+
+<p>Are you sure?</p>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}

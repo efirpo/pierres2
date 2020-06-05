@@ -14,6 +14,7 @@
 @if (User.Identity.IsAuthenticated)
 {<center>
 @Html.ActionLink("Edit this flavor", "Edit", new {id = Model.FlavorId}) <span> | </span> 
-@Html.ActionLink("Add a treat to this flavor", "AddTreat", new {id = Model.FlavorId})
+@Html.ActionLink("Add a treat to this flavor", "AddTreat", new {id = Model.FlavorId}) <span>|</span>
+@Html.ActionLink("Delete this flavor", "Delete", new { id = Model.FlavorId})
 </center>
 }

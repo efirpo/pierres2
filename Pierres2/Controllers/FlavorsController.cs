@@ -82,9 +82,20 @@ namespace Pierres2.Controllers
       return RedirectToAction("Details", new { id });
     }
 
-    public ActionResult Delete()
+    public ActionResult Delete(int id)
     {
-      return View();
+      var thisFlavor = _db.Flavors.FirstOrDefault(flav => flav.FlavorId == id);
+      return View(thisFlavor);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisFlavor = _db.Flavors.FirstOrDefault(flav => flav.FlavorId == id);
+      _db.Flavors.Remove(thisFlavor);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+
     }
   }
 }
