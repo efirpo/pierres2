@@ -13,8 +13,9 @@
 </ul>
 
 @if (User.Identity.IsAuthenticated)
-{<center>
+{
+  <center>
   <br>
   @Html.ActionLink("Add a new flavor", "Create")
-</center>
+  </center>
 }
