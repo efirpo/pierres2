@@ -5,15 +5,17 @@
 
 <h1>Pierre's Treats</h1>
 
+<ul>
 @foreach (Treat treat in Model)
 {
-  <p>@Html.ActionLink($"{treat.Type}", "Details", new { id = treat.TreatId})</p>
+  <li>@Html.ActionLink($"{treat.Type}", "Details", new { id = treat.TreatId})</li>
 }
-
-@Html.ActionLink("View all Flavors", "Index", "Flavors")
+</ul>
 
 @if (User.Identity.IsAuthenticated)
 {
+  <center>
   <br>
   @Html.ActionLink("Add a new treat", "Create")
+  </center>
 }

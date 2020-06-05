@@ -2,12 +2,14 @@
   <img src="~/img/title.png"><br>
   <center>
    @Html.ActionLink("Treats Index", "Index", "Treats") | 
-  @Html.ActionLink("Flavors Index", "Index", "Flavors")  @if (User.Identity.IsAuthenticated)
+  @Html.ActionLink("Flavors Index", "Index", "Flavors")
+  | @Html.ActionLink("Home", "Index", "Home")  @if (User.Identity.IsAuthenticated)
   {
     @using (Html.BeginForm("LogOff", "Account"))
     {
       <input type="submit" class="btn btn-default" value="Log out" />
     }
   }
+  
   </center>
 </div>

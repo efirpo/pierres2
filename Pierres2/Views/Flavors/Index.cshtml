@@ -5,15 +5,16 @@
 
 <h1>Pierre's Flavors</h1>
 
+<ul>
 @foreach (Flavor flavor in Model)
 {
-  <p>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId})</p>
+  <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId})</li>
 }
-
-@Html.ActionLink("View all treats", "Index", "Treats")
+</ul>
 
 @if (User.Identity.IsAuthenticated)
-{
+{<center>
   <br>
   @Html.ActionLink("Add a new flavor", "Create")
+</center>
 }
