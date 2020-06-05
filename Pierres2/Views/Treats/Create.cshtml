@@ -2,13 +2,19 @@
   Layout = "_Layout";
 }
 @model Pierres2.Models.Treat
-
+@if (ViewBag.Flavors.Count() == 0)
+{
+  <h1>Please add at least one flavor before adding treats.</h1> 
+}
+else
+{
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Type)
   @Html.TextBoxFor(model => model.Type)
   <br>
   <input type="submit" value="Add Treat"> 
+}
 }
 @Html.ActionLink("View all treats", "Index")
 @Html.ActionLink("View all flavors", "Index", "Flavors")

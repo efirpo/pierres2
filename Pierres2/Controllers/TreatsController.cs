@@ -29,6 +29,7 @@ namespace Pierres2.Controllers
 
     public ActionResult Create()
     {
+      ViewBag.Flavors = _db.Flavors.ToList();
       return View();
     }
     [HttpPost]
