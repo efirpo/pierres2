@@ -1,0 +1,10 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Treats that use this flavor.</h1>
+
+@foreach (var join in Model)
+{
+  @Html.ActionLink($"{join.Treat.Type}", "Details", "Treats")
+}

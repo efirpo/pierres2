@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  <br>
+  <input type="submit" value="Add Flavor"> 
+}
+
+@Html.ActionLink("View all flavors", "Index")
