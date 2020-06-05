@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Collections.Generic;
 using Pierres2.Models;
 
 namespace Pierres2.Controllers
@@ -9,7 +13,6 @@ namespace Pierres2.Controllers
   {
     private readonly Pierres2Context _db;
     private readonly UserManager<ApplicationUser> _userManager;
-
     public FlavorsController(Pierres2Context db, UserManager<ApplicationUser> userManager)
     {
       _db = db;
@@ -50,7 +53,7 @@ namespace Pierres2.Controllers
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
       return View();
     }
-    [HttPost]
+    [HttpPost]
     public ActionResult Edit(Flavor flavor, int id)
     {
 

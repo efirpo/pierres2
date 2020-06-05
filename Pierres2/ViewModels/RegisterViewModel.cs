@@ -1,7 +1,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace ToDoList.ViewModels
+namespace Pierres2.ViewModels
 {
   public class RegisterViewModel
   {

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using Library.Models;
+using Pierres2.Models;
 using System.Threading.Tasks;
-using Library.ViewModels;
+using Pierres2.ViewModels;
 using System;
 
 namespace Pierres2.Controllers
@@ -13,7 +13,7 @@ namespace Pierres2.Controllers
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, LibraryContext db)
+    public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, Pierres2Context db)
     {
       _userManager = userManager;
       _signInManager = signInManager;
