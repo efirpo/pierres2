@@ -13,9 +13,10 @@ a
 #header
 {
   top:0px;
-  margin: auto 0;
+  margin: 0 auto;
   width:100%;
   color:#CCC;
   background:#000;
   padding:8px;
+  align-content: center
 }
