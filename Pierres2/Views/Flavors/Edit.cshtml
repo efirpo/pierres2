@@ -4,7 +4,7 @@
 
 @model Pierres2.Models.Flavor
 
-<h1>@Model.Name</h1>
+<h1>@Html.DisplayFor(model => model.Name)</h1>
 <h2>Edit this flavor.</h2>
 
 @using (Html.BeginForm())

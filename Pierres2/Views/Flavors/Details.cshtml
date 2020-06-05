@@ -4,7 +4,7 @@
 
 <h1>Treats that use this flavor.</h1>
 
-@foreach (var join in Model)
+@foreach (var join in Model.Treats)
 {
-  @Html.ActionLink($"{join.Treat.Type}", "Details", "Treats")
+  @Html.ActionLink($"{join.Treat.Type}", "Details", "Treats", new {id = join.Treat.TreatId})
 }

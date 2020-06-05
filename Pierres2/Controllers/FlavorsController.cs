@@ -51,14 +51,14 @@ namespace Pierres2.Controllers
     public ActionResult Edit(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
-      return View();
+      return View(thisFlavor);
     }
     [HttpPost]
     public ActionResult Edit(Flavor flavor, int id)
     {
       _db.Entry(flavor).State = EntityState.Modified;
       _db.SaveChanges();
-      return View();
+      return RedirectToAction("Index");
     }
 
     public ActionResult AddTreat(int id)

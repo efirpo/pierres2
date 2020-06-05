@@ -2,4 +2,11 @@
   Layout = "_Layout";
 }
 
-<h1>Add a Treat to the</h1>
+<h1>Add a Treat to the @ViewBag.Flavor.Name flavor.</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.DropDownList("TreatId");
+
+  <input type="submit" value="Add Treat">
+}

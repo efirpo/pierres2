@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+@model Pierres2.Models.Treat
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type)
+  <br>
+  <input type="submit" value="Add Treat"> 
+}
+@Html.ActionLink("View all treats", "Index")
+@Html.ActionLink("View all flavors", "Index", "Flavors")

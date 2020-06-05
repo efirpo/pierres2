@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+@using Pierres2.Models;
+
+<h1>Pierre's Treats</h1>
+
+@foreach (Treat treat in Model)
+{
+  <p>@Html.ActionLink($"{treat.Type}", "Details", new { id = treat.TreatId})</p>
+}
+
+@Html.ActionLink("View all Flavors", "Index", "Flavors")
+
+@if (User.Identity.IsAuthenticated)
+{
+  <br>
+  @Html.ActionLink("Add a new treat", "Create")
+}

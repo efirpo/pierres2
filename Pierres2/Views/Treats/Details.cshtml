@@ -1,0 +1,10 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Flavors associated with this treat.</h1>
+
+@foreach (var join in Model.Flavors)
+{
+  @Html.ActionLink($"{join.Flavor.Name}", "Details", "Flavors", new {id = join.Flavor.FlavorId})
+}
